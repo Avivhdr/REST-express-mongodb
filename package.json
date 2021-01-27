@@ -4,14 +4,29 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon entry.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/register": "^7.12.10",
+    "babel-eslint": "^10.1.0",
     "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "core-js": "^3.8.3",
     "cors": "^2.8.5",
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "express": "^4.17.1",
-    "mongoose": "^5.11.13"
+    "express-mongo-sanitize": "^2.0.2",
+    "helmet": "^4.4.1",
+    "lodash": "^4.17.20",
+    "mongoose": "^5.11.13",
+    "nodemon": "^2.0.7",
+    "xss-clean": "^0.1.1"
   }
 }

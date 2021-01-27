@@ -1,16 +1,35 @@
 const express = require("express");
-const bodyParser = require("body-parser");
-const cors = require("cors");
+// Security
+const helmet = require('helmet');
+const xss = require('xss-clean');
+const mongoSanitize = require('express-mongo-sanitize');
+// Request handling
+const compression = require('compression');
+const cors = require('cors');
 
 const app = express();
+app.use(helmet()); // set security HTTP headers
+app.use(express.json()); // parse json request body
+app.use(xss()); // sanitize request data
+app.use(mongoSanitize()); // ↑
+app.use(compression()); // gzip compression
+app.use(cors()); // enable cors
+app.options('*', cors()); // ↑
 
-var corsOptions = {
-  origin: "http://localhost:8081"
-};
+const db = require("./app/models/");
 
-app.use(cors(corsOptions));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+db.mongoose.connect(db.url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }).then(() => {
+    console.log("Connected to the database!");
+  })
+  .catch((err) => {
+    console.log("Cannot connect to the database!", err);
+    process.exit();
+  });
+
+require("./app/routes/item.routes")(app);
 
 app.get("/", (req, res) => {
   res.json({ message: "App listening" });

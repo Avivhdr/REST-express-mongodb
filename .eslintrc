@@ -1,0 +1,53 @@
+{
+  "extends": "eslint:recommended",
+  "parser": "babel-eslint",
+  "plugins": ["import"],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "jsx": true,
+      "impliedStrict": true
+    }
+  },
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "mongo": true,
+    "node": true
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": 0,
+    "import/prefer-default-export": 0,
+    "import/no-named-as-default": 0,
+    "import/extensions": 0,
+    "import/order": [ 2, {
+      "groups": [ "builtin", "external", "parent", "sibling" ],
+      "newlines-between": "ignore"
+      } ],
+    "import/no-absolute-path": 0,
+    "import/no-unresolved": [ 2, { "ignore": [ "/" ] } ],
+    "new-cap": 0,
+    "no-multiple-empty-lines": [2, {"max": 1}],
+    "max-len": [2, 130],
+    "eol-last": 2,
+    "arrow-parens": [ "error", "always" ],
+    "arrow-body-style": 0,
+    "comma-dangle": [ "error", "always-multiline" ],
+    "no-unused-expressions": [ "error", { "allowTernary": true } ],
+    "no-confusing-arrow": 0,
+    "semi": 0,
+    "radix": [ "error", "as-needed" ],
+    "no-trailing-spaces": [ "error", { "skipBlankLines": true, "ignoreComments": true } ],
+    "no-multi-spaces": 0,
+    "object-curly-spacing": [ "error", "always" ],
+    "global-require": 0,
+    "linebreak-style": 0,
+    "class-methods-use-this": 0,
+    // "newline-after-var": [ "error" ],
+    "newline-before-return": [ "error" ],
+    "no-underscore-dangle": 0,
+    "no-plusplus": 0,
+    "function-paren-newline": 0,
+    "no-param-reassign": 0
+  }
+}
