@@ -1,13 +1,13 @@
 {
-  "name": "mern",
+  "name": "theoplayr",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "rest-express-mongodb",
+  "main": "entry.js",
   "scripts": {
-    "dev": "nodemon entry.js",
+    "start": "nodemon entry.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Aviv Hadar",
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.12.10",
@@ -18,6 +18,7 @@
     "compression": "^1.7.4",
     "core-js": "^3.8.3",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "eslint": "^7.18.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
